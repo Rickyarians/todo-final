@@ -34,7 +34,7 @@ const todoReducer = (state = initialState, action) => {
 				(todo) => String(todo.id) === String(action.payload.id),
 			);
 
-			if (todo >= 0) {
+			if (todoIndex >= 0) {
 				todos[todoIndex] = action.payload;
 			}
 
