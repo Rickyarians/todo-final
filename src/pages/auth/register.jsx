@@ -28,7 +28,7 @@ const RegisterPage = () => {
 		const users = JSON.parse(localStorage.getItem("users"));
 
 		// kondisional cek localstorage users
-		if (!users || users.length == 0) {
+		if (!users || users.length === 0) {
 			// jika users benar benar kosong maka tambahkan users sesuai inputan
 			localStorage.setItem("users", JSON.stringify([registerData]));
 		} else {

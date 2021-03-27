@@ -12,6 +12,7 @@ import { DeleteTodoPage } from "./pages/todo/delete-todo";
 import { DetailTodoPage } from "./pages/todo/detail-todo";
 import { UpdateTodoPage } from "./pages/todo/update-todo";
 import { ListTodoPage } from "./pages/todo/list-todo";
+import { ProtectedRoute } from "./pages/auth/ProtectedRoute";
 
 function App() {
 	return (
@@ -21,9 +22,10 @@ function App() {
 				<Route component={RegisterPage} path="/register" />
 				<Route component={ListTodoPage} path="/" exact />
 				<Route component={DetailTodoPage} path="/todo/:id" />
-				<Route component={AddTodoPage} path="/add" />
-				<Route component={UpdateTodoPage} path="/update/:id" />
-				<Route component={DeleteTodoPage} path="/delete/:id" />
+
+				<ProtectedRoute component={AddTodoPage} path="/add" />
+				<ProtectedRoute component={UpdateTodoPage} path="/update/:id" />
+				<ProtectedRoute component={DeleteTodoPage} path="/delete/:id" />
 			</Switch>
 		</Router>
 	);
